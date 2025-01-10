@@ -1,0 +1,214 @@
+<div style="height:100%">
+  <div class="wsui-122iseh fxLayout-row justify-between align-center">
+    <div><img
+        src="https://cips-iws-prod-eus2-cip-cdn.azureedge.net/iwsprodeus2cip-container/fb214okjs7vh-88a2ba3b-fb9f-5ded-af48-3dcc244d656e-headerLogo-D9ORF5Q9"
+        height="40" width="auto"></div>
+    <div style="position: relative">
+      <input class="input" type="text" [placeholder]="'Search Workspace'" maxlength="200" />
+      <div class="close-icon"></div>
+    </div>
+    <div class="fxLayout-row justify-between align-center">
+      <svg data-replacecolor="#171717" width="25" height="25" viewBox="0 0 24 24" fill="none" role="img">
+        <title></title>
+        <path clip-rule="evenodd"
+          d="M22.062 9.499c0 .736-.597 1.333-1.333 1.333h-6a1.333 1.333 0 01-1.332-1.333v-6c0-.735.596-1.332 1.333-1.332h5.999c.736 0 1.333.597 1.333 1.333v5.999zm-11.332 0c0 .736-.597 1.333-1.333 1.333H3.398a1.333 1.333 0 01-1.333-1.333v-6c0-.735.597-1.332 1.333-1.332h6c.735 0 1.332.597 1.332 1.333v5.999zm-.003 11.332c0 .736-.597 1.333-1.333 1.333h-6a1.333 1.333 0 01-1.332-1.334v-5.998c0-.737.597-1.334 1.333-1.334h5.999c.736 0 1.333.597 1.333 1.334v5.998zm6.628-6.396a.698.698 0 001.034 0l.334-.368a.696.696 0 011.212.502l-.025.498a.696.696 0 00.732.731l.498-.026a.696.696 0 01.501 1.213l-.368.334a.695.695 0 000 1.033l.368.334a.696.696 0 01-.501 1.212l-.498-.025a.696.696 0 00-.732.731l.025.498a.696.696 0 01-1.212.502l-.334-.368a.698.698 0 00-1.034 0l-.334.368a.697.697 0 01-1.213-.502l.026-.498a.696.696 0 00-.73-.736l-.499.026a.697.697 0 01-.502-1.212l.368-.334a.696.696 0 000-1.034l-.368-.334a.696.696 0 01.5-1.21l.498.026a.696.696 0 00.733-.731l-.025-.498a.697.697 0 011.212-.502l.334.37z"
+          stroke="#171717" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"></path>
+        <path clip-rule="evenodd" d="M17.872 19.213a1.38 1.38 0 100-2.76 1.38 1.38 0 000 2.76z" stroke="#171717"
+          stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"></path>
+      </svg>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="fxLayout-row gap-8">
+    <div class="tab-container fxLayout-column gap-32">
+      <div class="fxLayout-column justify-start align-start">
+        <span class="wsui-2r07j2">Good afternoon, Liping Gu[Liping.Gu]</span>
+        <span class="wsui-1h05u37">{{currentDate}}</span>
+      </div>
+      <div>
+        <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="start">
+          <mat-tab label="Home">
+            <ng-container *ngTemplateOutlet="HomeTemplate"></ng-container>
+          </mat-tab>
+          <mat-tab label="Apps"><ng-container *ngTemplateOutlet="AppsTemplate"></ng-container></mat-tab>
+          <mat-tab label="Desktops"><ng-container *ngTemplateOutlet="DesktopTemplate"></ng-container></mat-tab>
+          <mat-tab label="Documents"><ng-container *ngTemplateOutlet="DocumentTemplate"></ng-container></mat-tab>
+        </mat-tab-group>
+      </div>
+    </div>
+    <div class="fxLayout-column gap-16" style="width:30%; padding-right:4px;margin-top:32px" *ngIf="showGemini">
+      <div class="fxLayout-row justify-between align-center">
+        <div class="fxLayout-row gap-8 justify-start align-center">
+          <!-- <svg focusable="false" viewBox="0 -960 960 960" height="24" width="24" class="Pd0zJe NMm5M"
+            aria-hidden="true">
+            <path
+              d="M480-80q2,0 2-2q0-82 31-154t85-126t126-85t154-31q2,0 2-2t-2-2q-82,0-154-31T598-598T513-724T482-878q0-2-2-2t-2,2q0,82-31,154T362-598T236-513T82-482q-2,0-2,2t2,2q82,0 154,31t126,85t85,126T478-82q0,2 2,2Z">
+            </path>
+          </svg> -->
+          <span style="font-weight: 600;font-size:16px">Summary</span>
+          <!-- <div class="gemini-alpha">Alpha</div> -->
+        </div>
+        <img [src]="'/2025HackathonStaticPages/my-angular-project/assets/icons/ico-close-blade.svg'" (click)="showGemini = false"/>
+      </div>
+      <div class="fxLayout-column gap-24">
+        <div class="fxLayout-column gap-16">
+          <div class="fxLayout-column gap-8">
+            <img [src]="'/2025HackathonStaticPages/my-angular-project/assets/icons/person.png'" style="width: 24px">
+            <div>{{'Tell me about this file: ' + selectedFile}}</div>
+          </div>
+
+          <div class="fxLayout-column gap-8">
+            <svg focusable="false" viewBox="0 -960 960 960" height="24" width="24" class="rRlInc NMm5M">
+              <path
+                d="M480-80q2,0 2-2q0-82 31-154t85-126t126-85t154-31q2,0 2-2t-2-2q-82,0-154-31T598-598T513-724T482-878q0-2-2-2t-2,2q0,82-31,154T362-598T236-513T82-482q-2,0-2,2t2,2q82,0 154,31t126,85t85,126T478-82q0,2 2,2Z">
+              </path>
+            </svg>
+            <ul>
+              <li>WEM Agent Enrollment is about storing the necessary information for the WEM agent to connect to the cloud service on each agent machine.</li>
+              <li>The enrollment workflow is done by WEM admins/end-users via WEM API.
+              </li>
+              <li>The WEM service key authentication workflow uses WEM service keys for cloud communication and is managed and rotated by the WEM service.</li>
+              <li>Pros of WEM Agent Enrollment are that the agent doesn't need to connect to the connectors and the agent machine could be non-domain joined.
+              </li>
+              <li>Cons are that the WEM service must manage everything by itself, the agent machine must be persistent, and it doesn't currently support callback tasks.</li>
+              <li>Use cases include physical devices, personal/BYOD devices, and persistent VMs without/with CVAD.</li>
+              <li>WEM cloud agent supports Connector (Windows Connector, Connector Appliance) and Connector-Less (Citrix DaaS, WEM Agent Enrollment) deployment types.</li>
+              <li>CCAuth has 2 authentication methods: bearer tokens and service keys.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="fxLayout-row justify-between align-center">
+          <div class="fxLayout-row gap-8">
+            <svg focusable="false" viewBox="0 -960 960 960" height="20" width="20" class="vPVOeb NMm5M">
+              <path
+                d="M360-240q-33,0-56.5-23.5T280-320V-800q0-33 23.5-56.5T360-880H720q33,0 56.5,23.5T800-800v480q0,33-23.5,56.5T720-240H360Zm0-80H720V-800H360v480ZM200-80q-33,0-56.5-23.5T120-160V-720h80v560H640v80H200ZM360-320V-800v480Z">
+              </path>
+            </svg>
+            <svg focusable="false" viewBox="0 -960 960 960" height="20" width="20" class="vPVOeb NMm5M">
+              <path
+                d="M784-120L532-372q-30,24-69,38t-83,14q-109,0-184.5-75.5T120-580t75.5-184.5T380-840q31,0 60,6.5T495-814l-62,62q-13-4-26-6t-27-2q-75,0-127.5,52.5T200-580t52.5,127.5T380-400q70,0 120.5-45.5T559-560h80q-3,38-16.5,72T588-428L840-176l-56,56ZM700-480q0-92-64-156T480-700q92,0 156-64t64-156q0,92 64,156t156,64q-92,0-156,64T700-480Z">
+              </path>
+            </svg>
+          </div>
+          <div class="fxLayout-row gap-8">
+            <svg focusable="false" viewBox="0 -960 960 960" height="20" width="20" class=" NMm5M">
+              <path
+                d="M720-120H280V-640L560-920l50,50q7,7 11.5,19t4.5,23v14L582-640H840q32,0 56,24t24,56v80q0,7-2,15t-4,15L794-168q-9,20-30,34t-44,14ZM360-200H720L840-480v-80H480l54-220L360-606v406Zm0-406v46v80v280V-606Zm-80-34v80H160v360H280v80H80V-640H280Z">
+              </path>
+            </svg>
+            <svg focusable="false" viewBox="0 -960 960 960" height="20" width="20" class=" NMm5M">
+              <path
+                d="M240-840H680v520L400-40L350-90q-7-7-11.5-19T334-132v-14l44-174H120q-32,0-56-24T40-400v-80q0-7 2-15t4-15L166-792q9-20 30-34t44-14Zm360,80H240L120-480v80H480L426-180L600-354V-760Zm0,406v-46v-80V-760v406Zm80,34v-80H800V-760H680v-80H880v520H680Z">
+              </path>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #IconTemplate>
+  <div class="fxLayout-row justify-between">
+    <svg data-replacecolor="#EBAD00" width="16" height="16" viewBox="0 0 17 16" fill="none" role="img"
+      aria-label="Favorite">
+      <title>Favorite</title>
+      <path fill-rule="evenodd" clip-rule="evenodd"
+        d="M7.902.005c-.354.033-.67.244-.834.564L4.963 4.743l-4.02.399a1.034 1.034 0 00-.88.677l-.03.096c-.092.355.01.734.274.995l3.328 3.296-1.232 4.477c-.107.4.03.822.349 1.08l.082.061c.309.205.707.23 1.043.062l4.122-2.041 4.13 2.045a1.04 1.04 0 001.123-.124l.076-.068c.264-.26.37-.645.274-1.008l-1.234-4.481 3.326-3.296c.288-.285.383-.71.245-1.09l-.036-.086a1.037 1.037 0 00-.853-.593l-4.012-.398L8.93.572A1.047 1.047 0 008 0l-.097.005z"
+        fill="#EBAD00"></path>
+    </svg>
+    <svg data-replacecolor="#171717" width="24" height="24" viewBox="0 0 24 24" fill="none" role="img">
+      <title></title>
+      <path fill-rule="evenodd" clip-rule="evenodd"
+        d="M3 10a2 2 0 110 4 2 2 0 010-4zm18 0a2 2 0 110 4 2 2 0 010-4zm-9 0a2 2 0 110 4 2 2 0 010-4z" fill="#171717">
+      </path>
+    </svg>
+  </div>
+</ng-template>
+
+<ng-template #HomeTemplate>
+  <div class="fxLayout-column gap-16">
+    <div>Quick access</div>
+    <div class="cubic fxLayout-column">
+      <ng-container *ngTemplateOutlet="IconTemplate"></ng-container>
+      <div class="fxLayout-column justify-start align-center gap-16"><img style="width:32px;height:32px"
+          [src]="_globalVariableSvc.google.img">
+        <div>{{_globalVariableSvc.google.name}}</div>
+        <div>{{_globalVariableSvc.google.desc}}</div>
+      </div>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #AppsTemplate>
+  <div class="fxLayout-row gap-16">
+    <div class="cubic fxLayout-column">
+      <ng-container *ngTemplateOutlet="IconTemplate"></ng-container>
+      <div class="fxLayout-column justify-start align-center gap-16"><img style="width:32px;height:32px"
+          [src]="_globalVariableSvc.google.img">
+        <div>{{_globalVariableSvc.google.name}}</div>
+        <div>{{_globalVariableSvc.google.desc}}</div>
+      </div>
+    </div>
+
+    <div class="cubic fxLayout-column">
+      <ng-container *ngTemplateOutlet="IconTemplate"></ng-container>
+      <div class="fxLayout-column justify-start align-center gap-16"><img style="width:32px;height:32px"
+          [src]="_globalVariableSvc.workday.img">
+        <div>{{_globalVariableSvc.workday.name}}</div>
+        <div>{{_globalVariableSvc.workday.desc}}</div>
+      </div>
+    </div>
+
+    <div class="cubic fxLayout-column">
+      <ng-container *ngTemplateOutlet="IconTemplate"></ng-container>
+      <div class="fxLayout-column justify-start align-center gap-16"><img style="width:32px;height:32px"
+          [src]="_globalVariableSvc.mstsc.img">
+        <div>{{_globalVariableSvc.mstsc.name}}</div>
+        <div>{{_globalVariableSvc.mstsc.desc}}</div>
+      </div>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #DesktopTemplate>
+  <div class="cubic fxLayout-column">
+    <ng-container *ngTemplateOutlet="IconTemplate"></ng-container>
+    <div class="fxLayout-column justify-start align-center gap-16"><img style="width:32px;height:32px"
+        [src]="_globalVariableSvc.product.img">
+      <div>{{_globalVariableSvc.product.name}}</div>
+      <div>{{_globalVariableSvc.product.desc}}</div>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #DocumentTemplate>
+  <div class="fxLayout-column gap-16">
+    <div class="card fxLayout-row justify-between align-center" *ngFor="let img of images;let i = index">
+      <div class="fxLayout-row gap-16">
+        <img class="card-img" [src]="'/2025HackathonStaticPages/my-angular-project/assets/icons/' + img.name">
+        <div class="fxLayout-column gap-2">
+          <div>{{img.source}}</div>
+          <div>{{img.lastAceesed}}</div>
+          <div>{{img.lastModified}}</div>
+        </div>
+      </div>
+
+      <div><button mat-icon-button [matMenuTriggerFor]="menu">
+          <img [src]="'/2025HackathonStaticPages/my-angular-project/assets/icons/action-item.svg'" />
+        </button>
+        <mat-menu #menu="matMenu" xPosition="before">
+          <span mat-menu-item class="wem-menu-item" (click)="onFileSelected(img.source)">
+            Summary these files
+          </span>
+          <span mat-menu-item class="wem-menu-item" (click)="null">
+            Upload to google drive
+          </span>
+        </mat-menu>
+      </div>
+    </div>
+  </div>
+</ng-template>
